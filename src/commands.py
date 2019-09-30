@@ -1,3 +1,4 @@
+import code
 import os
 import sys
 
@@ -60,9 +61,45 @@ def create(ctx, name, dockerfile, models, resources, tox):
         output_status('file', 'tox.ini')
 
 
+def check_exists(filename):
+    default_paths = [
+        '/usr/local/bin',
+        os.path.join(os.path.expanduser('~/'), '.pyenv/shims'),
+    ]
+
+    found = False
+    for path in default_paths:
+        found = os.path.isfile(os.path.join(path, filename))
+
+    return found
+
+
+@click.command()
+@click.option('--wsgi_binary', '-w', default='gunicorn', help='Name of binary to use as the WSGI server')
+@click.option('--app', '-a', default='api', help="Name of the application's module which should be run.")
+@click.option('--port', '-p', default='8000', help='Port on which gunicorn should listen.')
+@click.option('--ip', '-i', default='127.0.0.1', help='Address at which gunicorn should listen.')
+@click.option('--workers', '-w', default='1', help='Number of gunicorn workers to handle requests.')
+@click.pass_context
+def run(ctx, wsgi_binary, app, port, ip, workers):
+    """Start the Falcon application."""
+    import subprocess
+
+    command = [wsgi_binary, '-b', f'{ip}:{port}', '-w', workers, app]
+    if check_exists(wsgi_binary):
+        subprocess.run(command)
+    else:
+        print(f'Could not find {wsgi_binary}. Exiting.')
+
+
+
 @click.command()
 @click.pass_context
 def shell(ctx):
     """Start an Ipython-based shell."""
-    import IPython
-    IPython.start_ipython(argv=[])
+    try:
+        import IPython
+        IPython.start_ipython(argv=[])
+    except ModuleNotFoundError as ex:
+        print('Cannot find IPython. Falling back to Python console.')
+        code.interact()
