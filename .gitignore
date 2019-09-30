@@ -2,7 +2,8 @@
 **/.idea
 **/venv
 .tox
-*.egg-info/
-*.egg
-*.eggs
+**/*.egg-info/
+**/*.egg
+**/*.eggs
 
+.python-version
