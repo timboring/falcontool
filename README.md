@@ -7,12 +7,12 @@ It is inspired by Django's `django-admin` and Flask's ` flask`.
 # Falcontool does the following:
 - Creates a project repository given a `project_name`
 - Sets up the basic project scaffolding, including:
-  - Creating a `tests` subdirectory
-  - Creating a `src` subdirectory
-  - Creating an empty `src/api.py`
-  - Creating an empty `requirements.txt` file in the root directory
-  - Creating an empty `README.md` file in the root directory
-  - Creating an empty `CODEOWNERS` file in the root directory
+  - Creates a `tests` subdirectory
+  - Creates a `src` subdirectory
+  - Creates an empty `src/api.py`
+  - Creates an empty `requirements.txt` file in the root directory
+  - Creates an empty `README.md` file in the root directory
+  - Creates an empty `CODEOWNERS` file in the root directory
 - Allow for the creation of additional resources if specified by flags:
   - `--dockerfile` creates an empty `Dockerfile` in the root directory
   - `--modelsfile` creates an empty `models.py` in `src/api` directory
