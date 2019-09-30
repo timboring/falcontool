@@ -37,7 +37,7 @@ def get_readme():
 
 setup(
     name="falcontool",
-    version="0.1.0",
+    version="0.1.1",
     url="https://github.com/timboring/falcontool",
     author="Tim Boring",
     author_email="tim@boring.green",

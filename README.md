@@ -1,17 +1,17 @@
+# Falcontool: a simple utility to create and work a Falcon-based project
+
 Falcontool is an attempt to provide tooling for quickly and easily starting a Falcon-based project.
  
 It is inspired by Django's `django-admin` and Flask's ` flask`.
 
-# Requirements
-The tool must do the following tasks:
-- Create a project repository given a `project_name`
-- Set up the basic project scaffolding, including:
-  - Creating a skeleton `tox.ini` file
+# Falcontool does the following:
+- Creates a project repository given a `project_name`
+- Sets up the basic project scaffolding, including:
   - Creating a `tests` subdirectory
   - Creating a `src` subdirectory
   - Inside the `src` subdirectory, create:
     - An empty `api.py` file
-  - Create a basic `requirements.txt` file in the root directory
+  - Create an empty `requirements.txt` file in the root directory
   - Create an empty `README.md` file in the root directory
   - Create an empty `CODEOWNERS` file in the root directory
 - Allow for the creation of additional resources if specified by flags:
@@ -19,7 +19,40 @@ The tool must do the following tasks:
   - `--modelsfile` creates an empty `models.py` in `src/api` directory
   - `--dbfile` creates an empty `db.py` in `src/api` directory
   - `--resourcesfile` creates an empty `resources.py` in `src/api` directory
+  - '--tox' creates an empty `tox.ini` in the root directory
   
-In addition to the above tasks, the tool should provide the following conveniences:
-- Provide a command to startup a Python console where a user can experiment with the project
-- Provide a command to run the projects test suite(s)
+# Installation
+```sh
+$> pip install falcontool
+```
+
+# Usage
+```sh
+$> falcon create foo
+created directory foo
+created directory tests
+created directory src
+created file requirements.txt
+created file README.md
+created file src/api.py
+created file CODEOWNERS
+
+$> cd foo
+$> ll -a ./*
+-rw-r--r-- 1 tjb tjb   40 Sep 29 20:23 ./CODEOWNERS
+-rw-r--r-- 1 tjb tjb   40 Sep 29 20:23 ./README.md
+-rw-r--r-- 1 tjb tjb   40 Sep 29 20:23 ./requirements.txt
+
+./src:
+total 12
+drwxr-xr-x 2 tjb tjb 4096 Sep 29 20:23 ./
+drwxr-xr-x 4 tjb tjb 4096 Sep 29 20:23 ../
+-rw-r--r-- 1 tjb tjb   40 Sep 29 20:23 api.py
+
+./tests:
+total 8
+drwxr-xr-x 2 tjb tjb 4096 Sep 29 20:23 ./
+drwxr-xr-x 4 tjb tjb 4096 Sep 29 20:23 ../
+```
+
+
