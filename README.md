@@ -9,11 +9,10 @@ It is inspired by Django's `django-admin` and Flask's ` flask`.
 - Sets up the basic project scaffolding, including:
   - Creating a `tests` subdirectory
   - Creating a `src` subdirectory
-  - Inside the `src` subdirectory, create:
-    - An empty `api.py` file
-  - Create an empty `requirements.txt` file in the root directory
-  - Create an empty `README.md` file in the root directory
-  - Create an empty `CODEOWNERS` file in the root directory
+  - Creating an empty `src/api.py`
+  - Creating an empty `requirements.txt` file in the root directory
+  - Creating an empty `README.md` file in the root directory
+  - Creating an empty `CODEOWNERS` file in the root directory
 - Allow for the creation of additional resources if specified by flags:
   - `--dockerfile` creates an empty `Dockerfile` in the root directory
   - `--modelsfile` creates an empty `models.py` in `src/api` directory
