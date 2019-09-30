@@ -47,4 +47,5 @@ setup(
     install_requires=parse_requirements(here("requirements.txt")),
     description="Falcon commandline tool",
     long_description="".join(["\n", get_readme()]),
+    long_description_content_type='text/markdown',
 )
