@@ -1,4 +1,4 @@
-# Falcontool: a simple utility to create and work a Falcon-based project
+# Falcontool: a simple utility to create and work with Falcon-based projects
 
 Falcontool is an attempt to provide tooling for quickly and easily starting a Falcon-based project.
  
