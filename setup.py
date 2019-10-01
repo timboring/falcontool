@@ -22,7 +22,7 @@ def parse_requirements(filename):
 
 
 def get_readme():
-    """Get the README from the current directory. If there isn't one, return an empty string."""
+    """Get the README from the current directory."""
     all_readmes = sorted(glob.glob("README*"))
     if len(all_readmes) > 1:
         warnings.warn(
@@ -37,7 +37,7 @@ def get_readme():
 
 setup(
     name="falcontool",
-    version="0.3.0",
+    version="0.3.1",
     url="https://github.com/timboring/falcontool",
     author="Tim Boring",
     author_email="tim@boring.green",
