@@ -18,7 +18,7 @@ It is inspired by Django's `django-admin` and Flask's ` flask`.
   - `--modelsfile` creates an empty `models.py` in `src/api` directory
   - `--dbfile` creates an empty `db.py` in `src/api` directory
   - `--resourcesfile` creates an empty `resources.py` in `src/api` directory
-  - '--tox' creates an empty `tox.ini` in the root directory
+  - `--tox` creates an empty `tox.ini` in the root directory
 - Provides the `shell` command to get a Python console (support IPython if installed)
 - Provides the `run` command to start the API server 
   
